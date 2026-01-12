@@ -29,17 +29,15 @@ enableCORS = false
 gatherUsageStats = false
 EOF
 
-# Create requirements if doesn't exist
-if [ ! -f requirements.txt ]; then
-    cat > requirements.txt << 'EOF'
+# Create updated requirements.txt for Python 3.13 compatibility
+cat > requirements.txt << 'EOF'
 streamlit==1.28.0
-pandas==2.0.3
-numpy==1.24.3
-plotly==5.17.0
-yfinance==0.2.28
-openpyxl==3.1.2
+pandas>=2.1.0
+numpy>=1.24.0
+plotly>=5.17.0
+yfinance>=0.2.28
+openpyxl>=3.1.2
 EOF
-fi
 
 echo "✅ Setup complete!"
 echo ""
