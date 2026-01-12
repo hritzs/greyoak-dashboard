@@ -21,15 +21,16 @@ textColor = "#262730"
 font = "sans serif"
 
 [server]
-maxUploadSize = 200
+maxUploadSize = 500
 enableXsrfProtection = true
 enableCORS = false
+maxMessageSize = 500
 
 [browser]
 gatherUsageStats = false
 EOF
 
-# Create updated requirements.txt for Python 3.13 compatibility
+# Create requirements
 cat > requirements.txt << 'EOF'
 streamlit==1.28.0
 pandas>=2.1.0
@@ -37,6 +38,8 @@ numpy>=1.24.0
 plotly>=5.17.0
 yfinance>=0.2.28
 openpyxl>=3.1.2
+tqdm>=4.65.0
+requests>=2.31.0
 EOF
 
 echo "✅ Setup complete!"
